@@ -1,5 +1,10 @@
-//www.syamsp.com
+/**
+ * Convert an integer to roman number
+ * @param {integer} num Integer representation of number
+ */
 convertToRoman = (num) => {
+  // The number has to be divided from the heighest
+  // For that reason, the heighest benchmark should be first in the array
 	const romanBenchMark = [
     ['(C)', 100000],
     ['(X)(C)', 90000],
@@ -26,12 +31,13 @@ convertToRoman = (num) => {
   let romanNumber = '', leftover = num
 
   romanBenchMark.forEach(benchMark => {
-  	let frequency = Math.floor(leftover / benchMark[1])
+    // Number of occurance of a purticular roman letter
+    let frequency = Math.floor(leftover / benchMark[1])
+    // Repeat the same character until it gets another division
     romanNumber += benchMark[0].repeat(frequency)
+    // Update the number with remaining value yet to be divided
   	leftover = leftover - frequency * benchMark[1]
   })
 
   return romanNumber;
 }
-
-console.log(convertToRoman(89999))
