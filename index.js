@@ -5,6 +5,10 @@
 convertToRoman = (num) => {
   // The number has to be divided from the heighest
   // For that reason, the heighest benchmark should be first in the array
+  if (num <= 0) {
+    return 'Please try with a positive integer'
+  }
+
 	const romanBenchMark = [
     ['(C)', 100000],
     ['(X)(C)', 90000],
