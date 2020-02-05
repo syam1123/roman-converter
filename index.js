@@ -1,6 +1,8 @@
 //www.syamsp.com
 convertToRoman = (num) => {
 	const romanBenchMark = [
+    ['(C)', 100000],
+    ['(X)(C)', 90000],
   	['(L)', 50000],
     ['(X)(L)', 40000],
     ['(X)', 10000],
