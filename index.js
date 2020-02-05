@@ -31,13 +31,14 @@ convertToRoman = (num) => {
   let romanNumber = '', leftover = num
 
   romanBenchMark.forEach(benchMark => {
+    // Don't do any actions if leftover is zero
+    if (!leftover) return;
     // Number of occurance of a purticular roman letter
     let frequency = Math.floor(leftover / benchMark[1])
     // Repeat the same character until it gets another division
     romanNumber += benchMark[0].repeat(frequency)
     // Update the number with remaining value yet to be divided
-  	leftover = leftover - frequency * benchMark[1]
+    leftover = leftover - frequency * benchMark[1]
   })
-
   return romanNumber;
 }
